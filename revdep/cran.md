@@ -1,9 +1,9 @@
 ## revdepcheck results
 
-We checked 1651 reverse dependencies (1644 from CRAN + 7 from Bioconductor), comparing R CMD check results across CRAN and dev versions of this package.
+We checked 1670 reverse dependencies (1663 from CRAN + 7 from Bioconductor), comparing R CMD check results across CRAN and dev versions of this package.
 
- * We saw 1 new problems
- * We failed to check 5 packages
+ * We saw 5 new problems
+ * We failed to check 4 packages
 
 Issues with CRAN packages are summarised below.
 
@@ -13,10 +13,21 @@ Issues with CRAN packages are summarised below.
 * gghighlight
   checking tests ... ERROR
 
+* htmltools
+  checking tests ... ERROR
+
+* tibble
+  checking tests ... ERROR
+
+* tidyquery
+  checking tests ... ERROR
+
+* WoodSimulatR
+  checking tests ... ERROR
+
 ### Failed to check
 
 * ggPMX         (NA)
 * loon.ggplot   (NA)
-* SSVS          (NA)
 * xpose.nlmixr  (NA)
 * xpose.nlmixr2 (NA)
