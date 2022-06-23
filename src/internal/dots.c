@@ -610,10 +610,15 @@ void check_named_splice(r_obj* node) {
 r_obj* dots_as_list(r_obj* dots, struct dots_capture_info* capture_info) {
   int n_kept = 0;
 
-  if (r_node_cdr(dots) == r_null && is_splice_box(r_node_car(dots))) {
+  if (r_names(dots) == r_null && r_node_cdr(dots) == r_null && is_splice_box(r_node_car(dots))) {
     r_obj* out = rlang_unbox(r_node_car(dots));
+    return r_clone(out);
+#if 0
+    // This would be faster but causes puzzling issues in tibble and
+    // other packages
     r_mark_shared(out);
     return out;
+#endif
   }
 
   r_obj* out = KEEP_N(r_alloc_list(capture_info->count), &n_kept);
